@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scene Graph 2D</title>
+
+<svg width="800px" height="800px">
+    <defs>
+        
+        <g id = "polygon" stroke = "black" fill = "none">
+            <polygon points = "-65,-42 -65,42 0,75 65,42 65,-42 0,-75"/>
+            <line x1 = "-65" x2 = "65" y1 = "-42" y2 = "42"/>
+            <line x1 = "-65" x2 = "65" y1 = "42" y2 = "-42"/>
+            <line x1 = "0" x2 = "0" y1 = "75" y2 = "-75"/>
+        </g>
+        <g id = "rectangle" stroke = "red" fill = "red">
+            <rect width = "300" height = "30" transform = "rotate (30)"/>
+        </g>
+        <g id = "triangle">
+            <polygon points = "0,300 100,300 50,0"/>
+        </g>
+        <g id = "rotatingPolygon">
+            <use xlink:href = "#polygon">
+                <animateTransform attributeName = "transform" type = "rotate"
+                from = "0 0 0" to = "359 0 0" dur = "5s" repeatCount = "indefinite"/>
+            </use>
+        </g>
+    </defs>
+    <use xlink:href = "#rotatingPolygon" transform = "translate(350,400)"/>
+    <use xlink:href = "#rotatingPolygon" transform = "translate(595,540)"/>
+    <use xlink:href = "#rotatingPolygon" transform = "translate(100,110) scale(0.8,0.8)"/>
+    <use xlink:href = "#rotatingPolygon" transform = "translate(295,230) scale(0.8,0.8)"/>
+    <use xlink:href = "#rotatingPolygon" transform = "translate(500,140) scale(0.6,0.6)"/>
+    <use xlink:href = "#rotatingPolygon" transform = "translate(645,225) scale(0.6,0.6)"/>
+
+    <use xlink:href = "#rectangle" transform = "translate(350,380)"/>
+    <use xlink:href = "#rectangle" transform = "translate(100,100) scale(0.8,0.8)"/>
+    <use xlink:href = "#rectangle" transform = "translate(500,130) scale(0.6,0.6)"/>
+
+    <use xlink:href = "#triangle" transform = "translate(420,460)" fill = "green"/> 
+    <use xlink:href = "#triangle" transform = "translate(160,165) scale(0.8,0.8)" fill = "blue"/> 
+    <use xlink:href = "#triangle" transform = "translate(540,180) scale(0.6,0.6)" fill = "purple"/> 
+
+
+
+
+</svg>
+
+</head>
+
+
+
+
+</body>
+</html>
